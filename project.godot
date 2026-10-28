@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/viewport_width=256
+window/size/viewport_height=256
+window/size/window_width_override=768
+window/size/window_height_override=768
 window/stretch/mode="viewport"
 
 [editor_plugins]
@@ -35,4 +35,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+lights_and_shadows/directional_shadow/size=8192
 environment/defaults/default_clear_color=Color(0.048447974, 0.045086093, 0.09458553, 1)
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

@@ -1,2 +1,3 @@
-res://character_body_2d.gd
 res://little_guy.tscn
+res://little_guy.gdshader
+res://character_body_2d.gd
