@@ -29,8 +29,8 @@ void fragment() {
 	float threshold = m[y * 4 + x];
 	
 	if (brightness > threshold) {
-		COLOR = vec4(0.694, 0.593, 0.792, 1.0);
+		COLOR = vec4(0.764, 0.583, 0.259, 1.0);
 	} else {
-		COLOR = vec4 (0.13, 0.164, 0.358, 1.0);
+		COLOR = vec4 (0.232, 0.155, 0.032, 1.0);
 	}
 }

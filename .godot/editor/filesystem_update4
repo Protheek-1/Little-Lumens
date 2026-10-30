@@ -1,3 +1,5 @@
 res://little_guy.tscn
 res://little_guy.gdshader
 res://character_body_2d.gd
+res://one_bit_filter.gd
+res://camera_2d.gd
