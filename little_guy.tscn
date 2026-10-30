@@ -177,6 +177,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
+radius = 16.0
+
 [node name="LittleGuy" type="CharacterBody2D" unique_id=767060622]
 z_index = 1
 motion_mode = 1
@@ -210,3 +213,9 @@ light_mask = 2
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_dcsxo")
 animation = &"walk_up"
+
+[node name="PlayerGlow" type="Area2D" parent="." unique_id=1751320505]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerGlow" unique_id=1065507405]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_dcsxo")

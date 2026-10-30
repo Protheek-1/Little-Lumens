@@ -1,18 +1,67 @@
 [gd_scene format=3 uid="uid://cmye18we2shjq"]
 
 [ext_resource type="Script" uid="uid://dnqnax6ps7ad3" path="res://light_switch.gd" id="1_nw67r"]
+[ext_resource type="Texture2D" uid="uid://dx4hex35o1yni" path="res://light_sensor_dark.png" id="2_5deac"]
+[ext_resource type="Texture2D" uid="uid://ditqgyr8uiv6e" path="res://light_sensor_bright-Sheet.png" id="3_o3261"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
 
-[node name="LightSwitch" type="Area2D" unique_id=1107426434]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v46xo"]
+atlas = ExtResource("3_o3261")
+region = Rect2(0, 4, 16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk7si"]
+atlas = ExtResource("3_o3261")
+region = Rect2(16, 4, 16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyvmx"]
+atlas = ExtResource("3_o3261")
+region = Rect2(32, 4, 16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h5ca"]
+atlas = ExtResource("3_o3261")
+region = Rect2(48, 4, 16, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcsxo"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5deac")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v46xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk7si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyvmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h5ca")
+}],
+"loop": 1,
+"name": &"lit",
+"speed": 4.0
+}]
+
+[node name="LightSensor" type="Area2D" unique_id=1107426434]
 script = ExtResource("1_nw67r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014580626]
 shape = SubResource("CircleShape2D_dcsxo")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=439155907]
-offset_left = -9.0
-offset_top = -9.0
-offset_right = 10.0
-offset_bottom = 8.0
-color = Color(0.39224494, 0.90563625, 0.36162663, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=595603063]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_dcsxo")
+animation = &"idle"
