@@ -1,8 +1,6 @@
 extends Camera2D
 
-# Drag your LittleGuy node into this slot in the Inspector
 @export var player: CharacterBody2D 
-
 # Force the math to strictly use your internal 256x256 pixel grid
 const ROOM_WIDTH: float = 256.0
 const ROOM_HEIGHT: float = 256.0
@@ -12,10 +10,10 @@ func _ready() -> void:
 	position_smoothing_enabled = true
 	position_smoothing_speed = 10.0 
 
+
 func _process(_delta: float) -> void:
 	if not player:
 		return
-		
 	# 1. Shift the player's position by half a room size to align with a (0,0) centered grid
 	var shifted_x: float = player.global_position.x + (ROOM_WIDTH / 2.0)
 	var shifted_y: float = player.global_position.y + (ROOM_HEIGHT / 2.0)
