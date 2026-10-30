@@ -178,7 +178,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
-radius = 16.0
+radius = 15.0
 
 [node name="LittleGuy" type="CharacterBody2D" unique_id=767060622]
 z_index = 1

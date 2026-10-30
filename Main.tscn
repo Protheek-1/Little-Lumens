@@ -167,10 +167,10 @@ target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
 position = Vector2(102, 218)
 
 [node name="Door" parent="." unique_id=1766075282 instance=ExtResource("3_lgr22")]
-position = Vector2(102, 241)
+position = Vector2(102, 242)
 
 [node name="Door3" parent="." unique_id=227660778 instance=ExtResource("3_lgr22")]
-position = Vector2(102, 264)
+position = Vector2(102, 266)
 
 [node name="OneBitFilter" type="ColorRect" parent="." unique_id=731362020]
 z_index = 1
