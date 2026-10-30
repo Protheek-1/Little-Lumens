@@ -1,42 +1,10 @@
-[gd_scene format=3 uid="uid://cbptj1dj5ogma"]
+[gd_scene format=3 uid="uid://cfwbysmoppbrl"]
 
-[ext_resource type="Script" uid="uid://dys0sgqyf0xs7" path="res://camera_2d.gd" id="1_1oqsl"]
 [ext_resource type="Script" uid="uid://dxk7dpb5d4pu8" path="res://character_body_2d.gd" id="1_h6sbk"]
 [ext_resource type="Texture2D" uid="uid://cpikkh1pdk8v5" path="res://blob_front-Sheet.png" id="2_4oiom"]
-[ext_resource type="Shader" uid="uid://dyaxxkjf5abn8" path="res://little_guy.gdshader" id="2_cf3mj"]
 [ext_resource type="Texture2D" uid="uid://cmsr38hr5k54i" path="res://blob_left-Sheet.png" id="3_qoy7d"]
 [ext_resource type="Texture2D" uid="uid://b5wg030mbs8h1" path="res://blob_right-Sheet.png" id="4_1oqsl"]
 [ext_resource type="Texture2D" uid="uid://cgcim6iuqqcxp" path="res://blob_back-Sheet.png" id="5_bdfw2"]
-[ext_resource type="Script" uid="uid://bujdhn5b88ldt" path="res://one_bit_filter.gd" id="7_qoy7d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oiom"]
-size = Vector2(1.40625, 310.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoy7d"]
-size = Vector2(101, 1.125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oflqb"]
-size = Vector2(113.52539, 2.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdfw2"]
-size = Vector2(115.05078, 2.740738)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_124f4"]
-size = Vector2(2, 79.51857)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oqsl"]
-resource_local_to_scene = true
-size = Vector2(3.0507813, 284.125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c84w1"]
-resource_local_to_scene = true
-size = Vector2(260, 4.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlkih"]
-size = Vector2(26, 24)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jnv6o"]
-polygon = PackedVector2Array(-98, -53, -74, -53, -74, -31, -98, -31)
 
 [sub_resource type="Gradient" id="Gradient_4oiom"]
 interpolation_mode = 1
@@ -209,169 +177,20 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcsxo"]
-shader = ExtResource("2_cf3mj")
-
-[node name="Main" type="Node2D" unique_id=29914839]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1410784419]
-offset_left = -889.0
-offset_top = -600.0
-offset_right = 9111.0
-offset_bottom = 9400.0
-color = Color(0.021434618, 0.02143464, 0.021434633, 1)
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1239438187 node_paths=PackedStringArray("player")]
-script = ExtResource("1_1oqsl")
-player = NodePath("../LittleGuy")
-
-[node name="RoomGuides" type="Node" parent="." unique_id=877163196]
-
-[node name="ReferenceRect" type="ReferenceRect" parent="RoomGuides" unique_id=1379483587]
-offset_left = -128.0
-offset_top = -128.0
-offset_right = 128.0
-offset_bottom = 128.0
-
-[node name="ReferenceRect2" type="ReferenceRect" parent="RoomGuides" unique_id=1054585115]
-offset_left = -128.0
-offset_top = 128.0
-offset_right = 128.0
-offset_bottom = 384.0
-
-[node name="ReferenceRect3" type="ReferenceRect" parent="RoomGuides" unique_id=455475465]
-offset_left = 128.0
-offset_top = 128.0
-offset_right = 384.0
-offset_bottom = 384.0
-
-[node name="ReferenceRect4" type="ReferenceRect" parent="RoomGuides" unique_id=1623875577]
-offset_left = 384.0
-offset_top = 128.0
-offset_right = 640.0
-offset_bottom = 384.0
-
-[node name="wall collision" type="Node" parent="." unique_id=1612003801]
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="wall collision" unique_id=764818073]
-position = Vector2(-2, 0)
-
-[node name="CollisionShape2D 1" type="CollisionShape2D" parent="wall collision/StaticBody2D2" unique_id=1410760068]
-position = Vector2(131.29688, 11)
-shape = SubResource("RectangleShape2D_4oiom")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="wall collision" unique_id=833640121]
-position = Vector2(-33, -4)
-
-[node name="CollisionShape2D 2" type="CollisionShape2D" parent="wall collision/StaticBody2D3" unique_id=702492412]
-position = Vector2(110.5, 132.4375)
-shape = SubResource("RectangleShape2D_qoy7d")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="wall collision" unique_id=1282461380]
-position = Vector2(-141, -1)
-
-[node name="CollisionShape2D 2" type="CollisionShape2D" parent="wall collision/StaticBody2D6" unique_id=583940875]
-position = Vector2(56.237305, 130)
-shape = SubResource("RectangleShape2D_oflqb")
-
-[node name="CollisionShape2D 3" type="CollisionShape2D" parent="wall collision/StaticBody2D6" unique_id=111057844]
-position = Vector2(267, 346)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_bdfw2")
-
-[node name="CollisionShape2D 4" type="CollisionShape2D" parent="wall collision/StaticBody2D6" unique_id=876380849]
-position = Vector2(269, 182)
-rotation = -3.1415925
-shape = SubResource("RectangleShape2D_124f4")
-
-[node name="CollisionShape2D 5" type="CollisionShape2D" parent="wall collision/StaticBody2D6" unique_id=655507816]
-position = Vector2(525, 170)
-rotation = -3.1415925
-shape = SubResource("RectangleShape2D_124f4")
-
-[node name="CollisionShape2D 6" type="CollisionShape2D" parent="wall collision/StaticBody2D6" unique_id=1608462897]
-position = Vector2(525, 344)
-rotation = -3.1415925
-shape = SubResource("RectangleShape2D_124f4")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="wall collision" unique_id=2079000864]
-
-[node name="CollisionShape2D 3" type="CollisionShape2D" parent="wall collision/StaticBody2D4" unique_id=1367252098]
-position = Vector2(-129.52539, -12.0625)
-shape = SubResource("RectangleShape2D_1oqsl")
-
-[node name="CollisionShape2D 4" type="CollisionShape2D" parent="wall collision/StaticBody2D4" unique_id=1089455711]
-position = Vector2(-131, 248)
-shape = SubResource("RectangleShape2D_1oqsl")
-
-[node name="CollisionShape2D 5" type="CollisionShape2D" parent="wall collision/StaticBody2D4" unique_id=705427292]
-position = Vector2(643, 263)
-shape = SubResource("RectangleShape2D_1oqsl")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="wall collision" unique_id=1722490205]
-
-[node name="CollisionShape2D 4" type="CollisionShape2D" parent="wall collision/StaticBody2D5" unique_id=799642896]
-position = Vector2(0, -129.875)
-shape = SubResource("RectangleShape2D_c84w1")
-
-[node name="CollisionShape2D 5" type="CollisionShape2D" parent="wall collision/StaticBody2D5" unique_id=1343623387]
-position = Vector2(0, 386)
-shape = SubResource("RectangleShape2D_c84w1")
-
-[node name="CollisionShape2D 6" type="CollisionShape2D" parent="wall collision/StaticBody2D5" unique_id=1415679033]
-position = Vector2(258, 386)
-shape = SubResource("RectangleShape2D_c84w1")
-
-[node name="CollisionShape2D 7" type="CollisionShape2D" parent="wall collision/StaticBody2D5" unique_id=453749229]
-position = Vector2(259, 127)
-shape = SubResource("RectangleShape2D_c84w1")
-
-[node name="CollisionShape2D 8" type="CollisionShape2D" parent="wall collision/StaticBody2D5" unique_id=1549432078]
-position = Vector2(514, 127)
-shape = SubResource("RectangleShape2D_c84w1")
-
-[node name="CollisionShape2D 9" type="CollisionShape2D" parent="wall collision/StaticBody2D5" unique_id=654101912]
-position = Vector2(514, 386)
-shape = SubResource("RectangleShape2D_c84w1")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1197814418]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1232465673]
-position = Vector2(-61, -16)
-shape = SubResource("RectangleShape2D_dlkih")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D" unique_id=1577807674]
-position = Vector2(25, 26)
-occluder = SubResource("OccluderPolygon2D_jnv6o")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1765482794]
-offset_left = -73.0
-offset_top = -27.0
-offset_right = -49.0
-offset_bottom = -5.0
-color = Color(0.12955841, 0.1295585, 0.12955844, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="StaticBody2D" unique_id=765272827]
-copy_mode = 2
-
-[node name="LittleGuy" type="CharacterBody2D" parent="." unique_id=544920839]
+[node name="LittleGuy" type="CharacterBody2D" unique_id=767060622]
 z_index = 1
-position = Vector2(1, -3)
 motion_mode = 1
 script = ExtResource("1_h6sbk")
 metadata/_edit_group_ = true
 
-[node name="glow" type="PointLight2D" parent="LittleGuy" unique_id=1791266173]
+[node name="glow" type="PointLight2D" parent="." unique_id=1425045547]
 texture_filter = 1
 position = Vector2(0, 4)
 energy = 15.66
 texture = SubResource("GradientTexture2D_dcsxo")
 texture_scale = 0.5
 
-[node name="flashlight" type="PointLight2D" parent="LittleGuy" unique_id=56709306]
+[node name="flashlight" type="PointLight2D" parent="." unique_id=1560692119]
 visible = false
 position = Vector2(1, 4)
 energy = 25.0
@@ -379,25 +198,15 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_cf3mj")
 texture_scale = 0.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LittleGuy" unique_id=143411932]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640018206]
 position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_dcsxo")
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="LittleGuy" unique_id=136688558]
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1106480108]
 copy_mode = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LittleGuy" unique_id=1952092040]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=585474776]
 light_mask = 2
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_dcsxo")
 animation = &"walk_up"
-
-[node name="OneBitFilter" type="ColorRect" parent="." unique_id=731362020]
-z_index = 1
-material = SubResource("ShaderMaterial_dcsxo")
-offset_left = -195.0
-offset_top = -267.0
-offset_right = -133.0
-offset_bottom = -205.0
-script = ExtResource("7_qoy7d")
-metadata/_edit_use_anchors_ = true

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmye18we2shjq"]
+
+[ext_resource type="Script" uid="uid://dnqnax6ps7ad3" path="res://light_switch.gd" id="1_nw67r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
+
+[node name="LightSwitch" type="Area2D" unique_id=1107426434]
+script = ExtResource("1_nw67r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014580626]
+shape = SubResource("CircleShape2D_dcsxo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=439155907]
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.39224494, 0.90563625, 0.36162663, 1)

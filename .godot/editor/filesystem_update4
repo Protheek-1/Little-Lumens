@@ -3,3 +3,8 @@ res://little_guy.gdshader
 res://character_body_2d.gd
 res://one_bit_filter.gd
 res://camera_2d.gd
+res://light_switch.tscn
+res://light_switch.gd
+res://door.tscn
+res://door.gd
+res://Main.tscn

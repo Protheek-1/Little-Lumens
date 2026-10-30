@@ -6,6 +6,10 @@ var pulse_time = 0.0
 
 @onready var sprite = $AnimatedSprite2D
 @onready var glow = $glow
+
+# Add this ready function to automatically register LittleGuy with your LightSwitch!
+func _ready():
+	add_to_group("player")
 	
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
