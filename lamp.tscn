@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://vm8naee2m8gw"]
+
+[ext_resource type="Texture2D" uid="uid://cesx4nxbo2oot" path="res://lamp.png" id="1_bekw5"]
+[ext_resource type="Script" uid="uid://o48r3gcpv4kt" path="res://lamp.gd" id="1_uno5e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uno5e"]
+atlas = ExtResource("1_bekw5")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxcd3"]
+atlas = ExtResource("1_bekw5")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfipa"]
+atlas = ExtResource("1_bekw5")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00ij4"]
+atlas = ExtResource("1_bekw5")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcsxo"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uno5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxcd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfipa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00ij4")
+}],
+"loop": 1,
+"name": &"light",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_n7rru"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5182482, 0.6277372)
+colors = PackedColorArray(1, 1, 1, 1, 0.46618086, 0.4661808, 0.4661808, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c84w1"]
+gradient = SubResource("Gradient_n7rru")
+width = 112
+height = 112
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlkih"]
+size = Vector2(15, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
+radius = 45.044422
+
+[node name="Lamp" type="RigidBody2D" unique_id=200944307]
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_uno5e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=428314237]
+sprite_frames = SubResource("SpriteFrames_dcsxo")
+animation = &"light"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=612380020]
+position = Vector2(0, 3)
+energy = 15.79
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_c84w1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471601006]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_dlkih")
+
+[node name="LampGlow" type="Area2D" parent="." unique_id=252357458]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LampGlow" unique_id=1368946761]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_dcsxo")

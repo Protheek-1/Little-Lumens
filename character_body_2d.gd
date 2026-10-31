@@ -40,7 +40,7 @@ func _physics_process(delta):
 			held_object.linear_velocity = Vector2.ZERO
 		
 		# Snappy position placement directly above your head grid row
-		held_object.global_position = global_position + Vector2(0, -12)
+		held_object.global_position = global_position + Vector2(-1, -12)
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

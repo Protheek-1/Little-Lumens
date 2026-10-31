@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://sgficc20bqap"]
+
+[ext_resource type="Texture2D" uid="uid://tj1wei2xcyum" path="res://puff.png" id="1_v4uit"]
+[ext_resource type="Script" uid="uid://brd6ebxrymnsd" path="res://smoke_puff.gd" id="2_ovawn"]
+
+[sub_resource type="Curve" id="Curve_ovawn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4957983, 0.97752815), 0.0, 0.0, 0, 0, Vector2(1, 0.20224726), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ovawn"]
+curve = SubResource("Curve_ovawn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ovawn"]
+lifetime_randomness = 0.12
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.66
+direction = Vector3(0, -0.5, 0)
+spread = 170.0
+flatness = 0.286
+initial_velocity_min = 35.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -80, 0)
+scale_curve = SubResource("CurveTexture_ovawn")
+
+[node name="SmokePuff" type="GPUParticles2D" unique_id=1408057471]
+emitting = false
+texture = ExtResource("1_v4uit")
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ovawn")
+script = ExtResource("2_ovawn")

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bujdhn5b88ldt" path="res://one_bit_filter.gd" id="5_03owx"]
 [ext_resource type="PackedScene" uid="uid://cfwbysmoppbrl" path="res://little_guy.tscn" id="6_3dxm6"]
 [ext_resource type="FontFile" uid="uid://b2makxl6omhvc" path="res://ThaleahFat.ttf" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://bhmwsqccbrscd" path="res://floor_tile.tscn" id="10_wkp8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oiom"]
 size = Vector2(1.40625, 310.5)
@@ -240,3 +241,29 @@ occluder = SubResource("OccluderPolygon2D_03owx")
 position = Vector2(512, 259)
 rotation = 1.5707964
 occluder = SubResource("OccluderPolygon2D_03owx")
+
+[node name="FloorTile" parent="." unique_id=1430297937 instance=ExtResource("10_wkp8b")]
+position = Vector2(-16, -16)
+
+[node name="FloorTile2" parent="." unique_id=1752710920 instance=ExtResource("10_wkp8b")]
+position = Vector2(0, -16)
+
+[node name="FloorTile3" parent="." unique_id=1103022441 instance=ExtResource("10_wkp8b")]
+position = Vector2(16, -16)
+
+[node name="FloorTile4" parent="." unique_id=510380352 instance=ExtResource("10_wkp8b")]
+position = Vector2(16, 0)
+
+[node name="FloorTile5" parent="." unique_id=700887670 instance=ExtResource("10_wkp8b")]
+position = Vector2(0, 16)
+
+[node name="FloorTile6" parent="." unique_id=1758409454 instance=ExtResource("10_wkp8b")]
+position = Vector2(16, 16)
+
+[node name="FloorTile7" parent="." unique_id=1714386113 instance=ExtResource("10_wkp8b")]
+position = Vector2(-16, 16)
+
+[node name="FloorTile8" parent="." unique_id=1859419142 instance=ExtResource("10_wkp8b")]
+
+[node name="FloorTile9" parent="." unique_id=603576929 instance=ExtResource("10_wkp8b")]
+position = Vector2(-16, 0)
