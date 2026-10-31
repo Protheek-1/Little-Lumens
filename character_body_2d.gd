@@ -3,10 +3,11 @@ extends CharacterBody2D
 const SPEED = 120.0
 var last_facing = "down"
 var pulse_time = 0.0
-
+var held_object: Node2D = null
 @onready var sprite = $AnimatedSprite2D
 @onready var glow = $glow
 @export var push_speed: float = 120
+@onready var level_root = get_parent() 
 func _ready():
 	add_to_group("player")
 	
@@ -25,6 +26,21 @@ func _physics_process(delta):
 	velocity = direction * SPEED
 	var pushed_block: RigidBody2D = null
 	move_and_slide()
+	if Input.is_action_just_pressed("ui_accept"):
+		if held_object:
+			place_object()
+		else:
+			for body in $PlayerGlow.get_overlapping_bodies():
+				if body.has_method("get_lifted"):
+					lift_object(body)
+					break
+	if held_object:
+		# Explicitly wipe out any lingering physical velocity vectors
+		if "linear_velocity" in held_object:
+			held_object.linear_velocity = Vector2.ZERO
+		
+		# Snappy position placement directly above your head grid row
+		held_object.global_position = global_position + Vector2(0, -12)
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -63,4 +79,23 @@ func _physics_process(delta):
 		sprite.speed_scale = 0.8
 		sprite.play("walk_" + last_facing)
 				
+func lift_object(object: Node2D) -> void:
+	held_object = object
+	object.get_lifted(self)
 	
+func place_object() -> void:
+	if not held_object: return
+	var drop_offset = Vector2.ZERO
+	if last_facing == "right": drop_offset = Vector2(16, 0)
+	elif last_facing == "left": drop_offset = Vector2(-16, 0)
+	elif last_facing == "down": drop_offset = Vector2(0, 16)
+	elif last_facing == "up": drop_offset = Vector2(0, -16)
+	var drop_global_pos = global_position + drop_offset
+	var object_to_drop = held_object
+	held_object = null
+	
+	object_to_drop.global_position = drop_global_pos
+	object_to_drop.get_placed()
+	
+	if held_object:
+		held_object.global_position = global_position + Vector2(0, -12)

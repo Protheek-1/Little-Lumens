@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://dyaxxkjf5abn8" path="res://little_guy.gdshader" id="4_trn2v"]
 [ext_resource type="Script" uid="uid://bujdhn5b88ldt" path="res://one_bit_filter.gd" id="5_03owx"]
 [ext_resource type="PackedScene" uid="uid://cfwbysmoppbrl" path="res://little_guy.tscn" id="6_3dxm6"]
+[ext_resource type="FontFile" uid="uid://b2makxl6omhvc" path="res://ThaleahFat.ttf" id="9_03owx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oiom"]
 size = Vector2(1.40625, 310.5)
@@ -22,7 +23,7 @@ size = Vector2(113.52539, 2.25)
 size = Vector2(115.05078, 2.740738)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_124f4"]
-size = Vector2(2, 79.51857)
+size = Vector2(4, 96.759285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1oqsl"]
 resource_local_to_scene = true
@@ -36,6 +37,9 @@ size = Vector2(260, 4.25)
 shader = ExtResource("4_trn2v")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c84w1"]
+polygon = PackedVector2Array(-128, 127, -128, 128, 128, 128, 128, 127)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_03owx"]
 polygon = PackedVector2Array(-128, 127, -128, 128, 128, 128, 128, 127)
 
 [node name="Main" type="Node2D" unique_id=29914839]
@@ -115,7 +119,7 @@ rotation = -3.1415925
 shape = SubResource("RectangleShape2D_124f4")
 
 [node name="CollisionShape2D 5" type="CollisionShape2D" parent="wall collision/StaticBody2D6" unique_id=655507816]
-position = Vector2(525, 170)
+position = Vector2(526, 178.62036)
 rotation = -3.1415925
 shape = SubResource("RectangleShape2D_124f4")
 
@@ -164,27 +168,54 @@ shape = SubResource("RectangleShape2D_c84w1")
 position = Vector2(514, 386)
 shape = SubResource("RectangleShape2D_c84w1")
 
+[node name="LightSensor" parent="." unique_id=1107426434 node_paths=PackedStringArray("target_doors") instance=ExtResource("2_3dxm6")]
+position = Vector2(-71, 58)
+target_doors = [NodePath("../Door4"), NodePath("../Door5"), NodePath("../Door6")]
+
 [node name="Lamp" parent="." unique_id=596171291 instance=ExtResource("4_lgr22")]
-position = Vector2(-8, 159)
+position = Vector2(0, 181)
+
+[node name="Lamp2" parent="." unique_id=200944307 instance=ExtResource("4_lgr22")]
+position = Vector2(-67, -72)
 
 [node name="Door2" parent="." unique_id=742558689 instance=ExtResource("3_lgr22")]
 position = Vector2(102, 218)
 
-[node name="Door" parent="." unique_id=1766075282 instance=ExtResource("3_lgr22")]
+[node name="Door4" parent="." unique_id=1766075282 instance=ExtResource("3_lgr22")]
+position = Vector2(-35, 104)
+
+[node name="Door5" parent="." unique_id=73715860 instance=ExtResource("3_lgr22")]
+position = Vector2(-11, 104)
+
+[node name="Door6" parent="." unique_id=838432821 instance=ExtResource("3_lgr22")]
+position = Vector2(13, 104)
+
+[node name="Door" parent="." unique_id=781968087 instance=ExtResource("3_lgr22")]
 position = Vector2(102, 242)
 
 [node name="Door3" parent="." unique_id=227660778 instance=ExtResource("3_lgr22")]
 position = Vector2(102, 266)
 
 [node name="DarkSensor" parent="." unique_id=517110805 node_paths=PackedStringArray("partner_switch", "target_doors") instance=ExtResource("4_03owx")]
-position = Vector2(74, 220)
+position = Vector2(41, 278)
 partner_switch = NodePath("../LightSwitch")
 target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
 
-[node name="LightSwitch" parent="." unique_id=1107426434 node_paths=PackedStringArray("partner_switch", "target_doors") instance=ExtResource("2_3dxm6")]
-position = Vector2(-39, 256)
-partner_switch = NodePath("../DarkSensor")
+[node name="LightSwitch" parent="." unique_id=118153754 node_paths=PackedStringArray("target_doors") instance=ExtResource("2_3dxm6")]
+position = Vector2(-47, 275)
 target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
+
+[node name="Label" type="Label" parent="." unique_id=1010940881]
+z_index = 2
+offset_left = -92.0
+offset_top = 320.0
+offset_right = 98.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.7647059, 0.58431375, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("9_03owx")
+theme_override_font_sizes/font_size = 16
+text = "PRESS SPACE TO PICK UP"
+horizontal_alignment = 1
 
 [node name="OneBitFilter" type="ColorRect" parent="." unique_id=731362020]
 z_index = 1
@@ -198,3 +229,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1185405662]
 occluder = SubResource("OccluderPolygon2D_c84w1")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." unique_id=495111192]
+position = Vector2(254, 260)
+rotation = 1.5707964
+occluder = SubResource("OccluderPolygon2D_03owx")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="." unique_id=602668279]
+position = Vector2(512, 259)
+rotation = 1.5707964
+occluder = SubResource("OccluderPolygon2D_03owx")
