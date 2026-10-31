@@ -198,11 +198,12 @@ position = Vector2(102, 266)
 
 [node name="DarkSensor" parent="." unique_id=517110805 node_paths=PackedStringArray("partner_switch", "target_doors") instance=ExtResource("4_03owx")]
 position = Vector2(41, 278)
-partner_switch = NodePath("../LightSwitch")
+partner_switch = NodePath("../LightSwitch2")
 target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
 
-[node name="LightSwitch" parent="." unique_id=118153754 node_paths=PackedStringArray("target_doors") instance=ExtResource("2_3dxm6")]
-position = Vector2(-47, 275)
+[node name="LightSwitch2" parent="." unique_id=118153754 node_paths=PackedStringArray("partner_switch", "target_doors") instance=ExtResource("2_3dxm6")]
+position = Vector2(-47, 278)
+partner_switch = NodePath("../DarkSensor")
 target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
 
 [node name="Label" type="Label" parent="." unique_id=1010940881]
