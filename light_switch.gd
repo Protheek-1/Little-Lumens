@@ -2,11 +2,15 @@ extends Area2D
 
 signal state_changed(is_lit: bool)
 
+@export var partner_switch: Area2D
+
 @export var target_doors: Array[Node2D] = [] 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var is_illuminated: bool = false
+var active_light_sources: int = 0
+
+var is_currently_active: bool = false
 
 func _ready() -> void:
 	if sprite:
@@ -17,26 +21,35 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	# Instantly opens the door when the player walks into the switch area
-	if area.name == "PlayerGlow" or area.is_in_group("light_source"):
-		activate_switch()
+	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
+		active_light_sources += 1
+		if active_light_sources >= 1:
+			is_currently_active = true
+			if sprite:
+				sprite.play("lit")
+			state_changed.emit(true)
+			if partner_switch and partner_switch.is_currently_active:
+				open_all_doors()
+			
 
 func _on_area_exited(area: Area2D) -> void:
 	# Instantly closes the door when the player walks away
-	if area.name == "PlayerGlow" or area.is_in_group("light_source"):
-		deactivate_switch()
+	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
+		active_light_sources -= 1
+		if active_light_sources <= 0:
+			active_light_sources = 0
+			is_currently_active = false
+			if sprite:
+				sprite.play("idle")
+			state_changed.emit(false)	
+			close_all_doors()
 
-func activate_switch() -> void:
-	if sprite:
-		sprite.play("lit")
-	state_changed.emit(true)
+func open_all_doors() -> void:
 	for door in target_doors:
 		if door and door.has_method("open"):
 			door.open()
 
-func deactivate_switch() -> void:
-	if sprite:
-		sprite.play("idle")
-	state_changed.emit(false)
+func close_all_doors() -> void:
 	for door in target_doors:
 		if door and door.has_method("close"):
 			door.close()

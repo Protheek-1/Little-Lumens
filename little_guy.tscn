@@ -35,7 +35,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.2173913, 0.6869565)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcsxo"]
-size = Vector2(15, 13)
+size = Vector2(15, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4oiom"]
 atlas = ExtResource("2_4oiom")
@@ -190,6 +190,7 @@ metadata/_edit_group_ = true
 texture_filter = 1
 position = Vector2(0, 4)
 energy = 15.66
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_dcsxo")
 texture_scale = 0.5
 
@@ -202,7 +203,7 @@ texture = SubResource("GradientTexture2D_cf3mj")
 texture_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640018206]
-position = Vector2(-0.5, 4.5)
+position = Vector2(-0.5, 5)
 shape = SubResource("RectangleShape2D_dcsxo")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1106480108]

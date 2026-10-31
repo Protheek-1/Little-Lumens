@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dys0sgqyf0xs7" path="res://camera_2d.gd" id="1_fos0i"]
 [ext_resource type="PackedScene" uid="uid://cmye18we2shjq" path="res://light_switch.tscn" id="2_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://c2k1jggajxwpu" path="res://door.tscn" id="3_lgr22"]
+[ext_resource type="PackedScene" uid="uid://u4vvt8uagkjn" path="res://dark_sensor.tscn" id="4_03owx"]
+[ext_resource type="PackedScene" uid="uid://vm8naee2m8gw" path="res://lamp.tscn" id="4_lgr22"]
 [ext_resource type="Shader" uid="uid://dyaxxkjf5abn8" path="res://little_guy.gdshader" id="4_trn2v"]
 [ext_resource type="Script" uid="uid://bujdhn5b88ldt" path="res://one_bit_filter.gd" id="5_03owx"]
 [ext_resource type="PackedScene" uid="uid://cfwbysmoppbrl" path="res://little_guy.tscn" id="6_3dxm6"]
@@ -32,6 +34,9 @@ size = Vector2(260, 4.25)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dcsxo"]
 shader = ExtResource("4_trn2v")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c84w1"]
+polygon = PackedVector2Array(-128, 127, -128, 128, 128, 128, 128, 127)
 
 [node name="Main" type="Node2D" unique_id=29914839]
 
@@ -159,9 +164,8 @@ shape = SubResource("RectangleShape2D_c84w1")
 position = Vector2(514, 386)
 shape = SubResource("RectangleShape2D_c84w1")
 
-[node name="LightSwitch" parent="." unique_id=1107426434 node_paths=PackedStringArray("target_doors") instance=ExtResource("2_3dxm6")]
-position = Vector2(-39, 256)
-target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
+[node name="Lamp" parent="." unique_id=596171291 instance=ExtResource("4_lgr22")]
+position = Vector2(-8, 159)
 
 [node name="Door2" parent="." unique_id=742558689 instance=ExtResource("3_lgr22")]
 position = Vector2(102, 218)
@@ -172,6 +176,16 @@ position = Vector2(102, 242)
 [node name="Door3" parent="." unique_id=227660778 instance=ExtResource("3_lgr22")]
 position = Vector2(102, 266)
 
+[node name="DarkSensor" parent="." unique_id=517110805 node_paths=PackedStringArray("partner_switch", "target_doors") instance=ExtResource("4_03owx")]
+position = Vector2(74, 220)
+partner_switch = NodePath("../LightSwitch")
+target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
+
+[node name="LightSwitch" parent="." unique_id=1107426434 node_paths=PackedStringArray("partner_switch", "target_doors") instance=ExtResource("2_3dxm6")]
+position = Vector2(-39, 256)
+partner_switch = NodePath("../DarkSensor")
+target_doors = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Door3")]
+
 [node name="OneBitFilter" type="ColorRect" parent="." unique_id=731362020]
 z_index = 1
 material = SubResource("ShaderMaterial_dcsxo")
@@ -181,3 +195,6 @@ offset_right = -133.0
 offset_bottom = -205.0
 script = ExtResource("5_03owx")
 metadata/_edit_use_anchors_ = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1185405662]
+occluder = SubResource("OccluderPolygon2D_c84w1")

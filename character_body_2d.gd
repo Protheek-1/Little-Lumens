@@ -6,8 +6,7 @@ var pulse_time = 0.0
 
 @onready var sprite = $AnimatedSprite2D
 @onready var glow = $glow
-
-# Add this ready function to automatically register LittleGuy with your LightSwitch!
+@export var push_speed: float = 120
 func _ready():
 	add_to_group("player")
 	
@@ -24,7 +23,21 @@ func _physics_process(delta):
 	# Set your velocity and move smoothly through walls 
 	var direction = input_vector.normalized()
 	velocity = direction * SPEED
+	var pushed_block: RigidBody2D = null
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider is RigidBody2D:
+			pushed_block = collider
+			var push_direction = -collision.get_normal()
+			pushed_block.linear_velocity = push_direction * push_speed
+	if pushed_block == null:
+		if get_parent():
+			for child in get_parent().get_children():
+				if child is RigidBody2D:
+					child.linear_velocity = Vector2.ZERO
 	
 	pulse_time += delta * 2.0
 	var pulse_modifier = sin(pulse_time) * 0.04
@@ -51,8 +64,3 @@ func _physics_process(delta):
 		sprite.play("walk_" + last_facing)
 				
 	
-	var flashlight = $flashlight
-	
-	if flashlight:
-		var angle_to_mouse = get_local_mouse_position().angle()
-		flashlight.rotation = angle_to_mouse
