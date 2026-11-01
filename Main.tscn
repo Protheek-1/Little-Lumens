@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cfwbysmoppbrl" path="res://little_guy.tscn" id="6_3dxm6"]
 [ext_resource type="FontFile" uid="uid://b2makxl6omhvc" path="res://ThaleahFat.ttf" id="9_03owx"]
 [ext_resource type="PackedScene" uid="uid://bhmwsqccbrscd" path="res://floor_tile.tscn" id="10_wkp8b"]
+[ext_resource type="Texture2D" uid="uid://d0py7ngcc7eqq" path="res://cake-slice-pixel-art-icon-with-cherry-and-layered-cream-vector-removebg-preview.png" id="11_20pc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oiom"]
 size = Vector2(1.40625, 310.5)
@@ -43,6 +44,18 @@ polygon = PackedVector2Array(-128, 127, -128, 128, 128, 128, 128, 127)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_03owx"]
 polygon = PackedVector2Array(-128, 127, -128, 128, 128, 128, 128, 127)
 
+[sub_resource type="Gradient" id="Gradient_5vvyt"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.46715328, 0.620438)
+colors = PackedColorArray(1, 1, 1, 1, 0.4817518, 0.4817518, 0.4817518, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dcsxo"]
+gradient = SubResource("Gradient_5vvyt")
+width = 640
+height = 640
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Main" type="Node2D" unique_id=29914839]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1410784419]
@@ -65,24 +78,28 @@ offset_left = -128.0
 offset_top = -128.0
 offset_right = 128.0
 offset_bottom = 128.0
+metadata/_edit_lock_ = true
 
 [node name="ReferenceRect2" type="ReferenceRect" parent="RoomGuides" unique_id=1054585115]
 offset_left = -128.0
 offset_top = 128.0
 offset_right = 128.0
 offset_bottom = 384.0
+metadata/_edit_lock_ = true
 
 [node name="ReferenceRect3" type="ReferenceRect" parent="RoomGuides" unique_id=455475465]
 offset_left = 128.0
 offset_top = 128.0
 offset_right = 384.0
 offset_bottom = 384.0
+metadata/_edit_lock_ = true
 
 [node name="ReferenceRect4" type="ReferenceRect" parent="RoomGuides" unique_id=1623875577]
 offset_left = 384.0
 offset_top = 128.0
 offset_right = 640.0
 offset_bottom = 384.0
+metadata/_edit_lock_ = true
 
 [node name="LittleGuy" parent="." unique_id=767060622 instance=ExtResource("6_3dxm6")]
 
@@ -219,6 +236,32 @@ theme_override_font_sizes/font_size = 16
 text = "PRESS SPACE TO PICK UP"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="." unique_id=826096995]
+z_index = 2
+offset_left = 426.0
+offset_top = 231.0
+offset_right = 616.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0.7647059, 0.58431375, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("9_03owx")
+theme_override_font_sizes/font_size = 16
+text = "ฅ(^•ﻌ•^ฅ)
+end of the game:
+for now ...."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1667958461]
+z_index = 2
+offset_left = 429.0
+offset_top = 301.0
+offset_right = 619.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(0.7647059, 0.58431375, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("9_03owx")
+theme_override_font_sizes/font_size = 10
+text = "(will add more next week)"
+horizontal_alignment = 1
+
 [node name="OneBitFilter" type="ColorRect" parent="." unique_id=731362020]
 z_index = 1
 material = SubResource("ShaderMaterial_dcsxo")
@@ -233,7 +276,7 @@ metadata/_edit_use_anchors_ = true
 occluder = SubResource("OccluderPolygon2D_c84w1")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="." unique_id=495111192]
-position = Vector2(254, 260)
+position = Vector2(254, 262)
 rotation = 1.5707964
 occluder = SubResource("OccluderPolygon2D_03owx")
 
@@ -244,6 +287,84 @@ occluder = SubResource("OccluderPolygon2D_03owx")
 
 [node name="FloorTile" parent="." unique_id=1430297937 instance=ExtResource("10_wkp8b")]
 position = Vector2(-16, -16)
+
+[node name="FloorTile10" parent="." unique_id=379261289 instance=ExtResource("10_wkp8b")]
+position = Vector2(159, 251)
+
+[node name="FloorTile11" parent="." unique_id=855329922 instance=ExtResource("10_wkp8b")]
+position = Vector2(159, 268)
+
+[node name="FloorTile34" parent="." unique_id=930233098 instance=ExtResource("10_wkp8b")]
+position = Vector2(361, 251)
+
+[node name="FloorTile35" parent="." unique_id=762438558 instance=ExtResource("10_wkp8b")]
+position = Vector2(361, 268)
+
+[node name="FloorTile12" parent="." unique_id=355684707 instance=ExtResource("10_wkp8b")]
+position = Vector2(176, 251)
+
+[node name="FloorTile13" parent="." unique_id=1318947833 instance=ExtResource("10_wkp8b")]
+position = Vector2(176, 268)
+
+[node name="FloorTile14" parent="." unique_id=949353081 instance=ExtResource("10_wkp8b")]
+position = Vector2(193, 251)
+
+[node name="FloorTile15" parent="." unique_id=1246091773 instance=ExtResource("10_wkp8b")]
+position = Vector2(193, 268)
+
+[node name="FloorTile16" parent="." unique_id=823774045 instance=ExtResource("10_wkp8b")]
+position = Vector2(210, 251)
+
+[node name="FloorTile17" parent="." unique_id=1849256867 instance=ExtResource("10_wkp8b")]
+position = Vector2(210, 268)
+
+[node name="FloorTile18" parent="." unique_id=999068042 instance=ExtResource("10_wkp8b")]
+position = Vector2(227, 251)
+
+[node name="FloorTile19" parent="." unique_id=169813181 instance=ExtResource("10_wkp8b")]
+position = Vector2(227, 268)
+
+[node name="FloorTile20" parent="." unique_id=1092789690 instance=ExtResource("10_wkp8b")]
+position = Vector2(244, 251)
+
+[node name="FloorTile21" parent="." unique_id=543669727 instance=ExtResource("10_wkp8b")]
+position = Vector2(244, 268)
+
+[node name="FloorTile22" parent="." unique_id=939834538 instance=ExtResource("10_wkp8b")]
+position = Vector2(261, 251)
+
+[node name="FloorTile23" parent="." unique_id=789376393 instance=ExtResource("10_wkp8b")]
+position = Vector2(261, 268)
+
+[node name="FloorTile24" parent="." unique_id=312975742 instance=ExtResource("10_wkp8b")]
+position = Vector2(278, 251)
+
+[node name="FloorTile25" parent="." unique_id=988438928 instance=ExtResource("10_wkp8b")]
+position = Vector2(278, 268)
+
+[node name="FloorTile26" parent="." unique_id=879691284 instance=ExtResource("10_wkp8b")]
+position = Vector2(295, 251)
+
+[node name="FloorTile27" parent="." unique_id=1532054860 instance=ExtResource("10_wkp8b")]
+position = Vector2(295, 268)
+
+[node name="FloorTile28" parent="." unique_id=824190345 instance=ExtResource("10_wkp8b")]
+position = Vector2(312, 251)
+
+[node name="FloorTile29" parent="." unique_id=622549625 instance=ExtResource("10_wkp8b")]
+position = Vector2(312, 268)
+
+[node name="FloorTile30" parent="." unique_id=1995056552 instance=ExtResource("10_wkp8b")]
+position = Vector2(328, 251)
+
+[node name="FloorTile31" parent="." unique_id=1431657564 instance=ExtResource("10_wkp8b")]
+position = Vector2(328, 268)
+
+[node name="FloorTile32" parent="." unique_id=1346415222 instance=ExtResource("10_wkp8b")]
+position = Vector2(345, 251)
+
+[node name="FloorTile33" parent="." unique_id=961025657 instance=ExtResource("10_wkp8b")]
+position = Vector2(345, 268)
 
 [node name="FloorTile2" parent="." unique_id=1752710920 instance=ExtResource("10_wkp8b")]
 position = Vector2(0, -16)
@@ -267,3 +388,12 @@ position = Vector2(-16, 16)
 
 [node name="FloorTile9" parent="." unique_id=603576929 instance=ExtResource("10_wkp8b")]
 position = Vector2(-16, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1517398990]
+position = Vector2(519, 186.00002)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_20pc6")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D" unique_id=2136522857]
+energy = 20.0
+texture = SubResource("GradientTexture2D_dcsxo")
