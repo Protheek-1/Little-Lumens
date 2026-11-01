@@ -3,13 +3,13 @@
 A cutie patootie 1-bit pixel art game about light, with a cozy antique / steampunk-ish vibe. Built in Godot, it’s a tiny puzzle prototype about moving, interacting, and using light to solve little environmental problems.
 
 What works:
-- WASD / arrow key movement
+- WASD movement
 - Pick up and place objects
 - Light sensors, lamps, doors, and switches
 - Cute 1-bit art shader with a warm antique feel cause thats this weeks theme
 
 How to play:
-1. Move around with WASD / arrow keys
+1. Move around with WASD
 2. Press Space to interact
 3. Use light and objects to figure out the puzzle
 4. Have fun
