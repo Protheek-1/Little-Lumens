@@ -285,108 +285,110 @@ position = Vector2(512, 259)
 rotation = 1.5707964
 occluder = SubResource("OccluderPolygon2D_03owx")
 
-[node name="FloorTile" parent="." unique_id=1430297937 instance=ExtResource("10_wkp8b")]
-position = Vector2(-16, -16)
+[node name="deco" type="Node" parent="." unique_id=755934307]
 
-[node name="FloorTile10" parent="." unique_id=379261289 instance=ExtResource("10_wkp8b")]
-position = Vector2(177, 255)
-
-[node name="FloorTile11" parent="." unique_id=855329922 instance=ExtResource("10_wkp8b")]
-position = Vector2(177, 272)
-
-[node name="FloorTile34" parent="." unique_id=930233098 instance=ExtResource("10_wkp8b")]
-position = Vector2(379, 255)
-
-[node name="FloorTile35" parent="." unique_id=762438558 instance=ExtResource("10_wkp8b")]
-position = Vector2(379, 272)
-
-[node name="FloorTile12" parent="." unique_id=355684707 instance=ExtResource("10_wkp8b")]
-position = Vector2(194, 255)
-
-[node name="FloorTile13" parent="." unique_id=1318947833 instance=ExtResource("10_wkp8b")]
-position = Vector2(194, 272)
-
-[node name="FloorTile14" parent="." unique_id=949353081 instance=ExtResource("10_wkp8b")]
-position = Vector2(211, 255)
-
-[node name="FloorTile15" parent="." unique_id=1246091773 instance=ExtResource("10_wkp8b")]
-position = Vector2(211, 272)
-
-[node name="FloorTile16" parent="." unique_id=823774045 instance=ExtResource("10_wkp8b")]
-position = Vector2(228, 255)
-
-[node name="FloorTile17" parent="." unique_id=1849256867 instance=ExtResource("10_wkp8b")]
-position = Vector2(228, 272)
-
-[node name="FloorTile18" parent="." unique_id=999068042 instance=ExtResource("10_wkp8b")]
-position = Vector2(245, 255)
-
-[node name="FloorTile19" parent="." unique_id=169813181 instance=ExtResource("10_wkp8b")]
-position = Vector2(245, 272)
-
-[node name="FloorTile20" parent="." unique_id=1092789690 instance=ExtResource("10_wkp8b")]
-position = Vector2(262, 255)
-
-[node name="FloorTile21" parent="." unique_id=543669727 instance=ExtResource("10_wkp8b")]
-position = Vector2(262, 272)
-
-[node name="FloorTile22" parent="." unique_id=939834538 instance=ExtResource("10_wkp8b")]
-position = Vector2(279, 255)
-
-[node name="FloorTile23" parent="." unique_id=789376393 instance=ExtResource("10_wkp8b")]
-position = Vector2(279, 272)
-
-[node name="FloorTile24" parent="." unique_id=312975742 instance=ExtResource("10_wkp8b")]
-position = Vector2(296, 255)
-
-[node name="FloorTile25" parent="." unique_id=988438928 instance=ExtResource("10_wkp8b")]
-position = Vector2(296, 272)
-
-[node name="FloorTile26" parent="." unique_id=879691284 instance=ExtResource("10_wkp8b")]
-position = Vector2(313, 255)
-
-[node name="FloorTile27" parent="." unique_id=1532054860 instance=ExtResource("10_wkp8b")]
-position = Vector2(313, 272)
-
-[node name="FloorTile28" parent="." unique_id=824190345 instance=ExtResource("10_wkp8b")]
-position = Vector2(330, 255)
-
-[node name="FloorTile29" parent="." unique_id=622549625 instance=ExtResource("10_wkp8b")]
-position = Vector2(330, 272)
-
-[node name="FloorTile30" parent="." unique_id=1995056552 instance=ExtResource("10_wkp8b")]
-position = Vector2(346, 255)
-
-[node name="FloorTile31" parent="." unique_id=1431657564 instance=ExtResource("10_wkp8b")]
-position = Vector2(346, 272)
-
-[node name="FloorTile32" parent="." unique_id=1346415222 instance=ExtResource("10_wkp8b")]
-position = Vector2(363, 255)
-
-[node name="FloorTile33" parent="." unique_id=961025657 instance=ExtResource("10_wkp8b")]
-position = Vector2(363, 272)
-
-[node name="FloorTile2" parent="." unique_id=1752710920 instance=ExtResource("10_wkp8b")]
-position = Vector2(0, -16)
-
-[node name="FloorTile3" parent="." unique_id=1103022441 instance=ExtResource("10_wkp8b")]
-position = Vector2(16, -16)
-
-[node name="FloorTile4" parent="." unique_id=510380352 instance=ExtResource("10_wkp8b")]
-position = Vector2(16, 0)
-
-[node name="FloorTile5" parent="." unique_id=700887670 instance=ExtResource("10_wkp8b")]
-position = Vector2(0, 16)
-
-[node name="FloorTile6" parent="." unique_id=1758409454 instance=ExtResource("10_wkp8b")]
-position = Vector2(16, 16)
-
-[node name="FloorTile7" parent="." unique_id=1714386113 instance=ExtResource("10_wkp8b")]
+[node name="FloorTile7" parent="deco" unique_id=1714386113 instance=ExtResource("10_wkp8b")]
 position = Vector2(-16, 16)
 
-[node name="FloorTile8" parent="." unique_id=1859419142 instance=ExtResource("10_wkp8b")]
+[node name="FloorTile" parent="deco" unique_id=1430297937 instance=ExtResource("10_wkp8b")]
+position = Vector2(-16, -16)
 
-[node name="FloorTile9" parent="." unique_id=603576929 instance=ExtResource("10_wkp8b")]
+[node name="FloorTile10" parent="deco" unique_id=379261289 instance=ExtResource("10_wkp8b")]
+position = Vector2(177, 255)
+
+[node name="FloorTile11" parent="deco" unique_id=855329922 instance=ExtResource("10_wkp8b")]
+position = Vector2(177, 272)
+
+[node name="FloorTile34" parent="deco" unique_id=930233098 instance=ExtResource("10_wkp8b")]
+position = Vector2(379, 255)
+
+[node name="FloorTile35" parent="deco" unique_id=762438558 instance=ExtResource("10_wkp8b")]
+position = Vector2(379, 272)
+
+[node name="FloorTile12" parent="deco" unique_id=355684707 instance=ExtResource("10_wkp8b")]
+position = Vector2(194, 255)
+
+[node name="FloorTile13" parent="deco" unique_id=1318947833 instance=ExtResource("10_wkp8b")]
+position = Vector2(194, 272)
+
+[node name="FloorTile14" parent="deco" unique_id=949353081 instance=ExtResource("10_wkp8b")]
+position = Vector2(211, 255)
+
+[node name="FloorTile15" parent="deco" unique_id=1246091773 instance=ExtResource("10_wkp8b")]
+position = Vector2(211, 272)
+
+[node name="FloorTile16" parent="deco" unique_id=823774045 instance=ExtResource("10_wkp8b")]
+position = Vector2(228, 255)
+
+[node name="FloorTile17" parent="deco" unique_id=1849256867 instance=ExtResource("10_wkp8b")]
+position = Vector2(228, 272)
+
+[node name="FloorTile18" parent="deco" unique_id=999068042 instance=ExtResource("10_wkp8b")]
+position = Vector2(245, 255)
+
+[node name="FloorTile19" parent="deco" unique_id=169813181 instance=ExtResource("10_wkp8b")]
+position = Vector2(245, 272)
+
+[node name="FloorTile20" parent="deco" unique_id=1092789690 instance=ExtResource("10_wkp8b")]
+position = Vector2(262, 255)
+
+[node name="FloorTile21" parent="deco" unique_id=543669727 instance=ExtResource("10_wkp8b")]
+position = Vector2(262, 272)
+
+[node name="FloorTile22" parent="deco" unique_id=939834538 instance=ExtResource("10_wkp8b")]
+position = Vector2(279, 255)
+
+[node name="FloorTile23" parent="deco" unique_id=789376393 instance=ExtResource("10_wkp8b")]
+position = Vector2(279, 272)
+
+[node name="FloorTile24" parent="deco" unique_id=312975742 instance=ExtResource("10_wkp8b")]
+position = Vector2(296, 255)
+
+[node name="FloorTile25" parent="deco" unique_id=988438928 instance=ExtResource("10_wkp8b")]
+position = Vector2(296, 272)
+
+[node name="FloorTile26" parent="deco" unique_id=879691284 instance=ExtResource("10_wkp8b")]
+position = Vector2(313, 255)
+
+[node name="FloorTile27" parent="deco" unique_id=1532054860 instance=ExtResource("10_wkp8b")]
+position = Vector2(313, 272)
+
+[node name="FloorTile28" parent="deco" unique_id=824190345 instance=ExtResource("10_wkp8b")]
+position = Vector2(330, 255)
+
+[node name="FloorTile29" parent="deco" unique_id=622549625 instance=ExtResource("10_wkp8b")]
+position = Vector2(330, 272)
+
+[node name="FloorTile30" parent="deco" unique_id=1995056552 instance=ExtResource("10_wkp8b")]
+position = Vector2(346, 255)
+
+[node name="FloorTile31" parent="deco" unique_id=1431657564 instance=ExtResource("10_wkp8b")]
+position = Vector2(346, 272)
+
+[node name="FloorTile32" parent="deco" unique_id=1346415222 instance=ExtResource("10_wkp8b")]
+position = Vector2(363, 255)
+
+[node name="FloorTile33" parent="deco" unique_id=961025657 instance=ExtResource("10_wkp8b")]
+position = Vector2(363, 272)
+
+[node name="FloorTile2" parent="deco" unique_id=1752710920 instance=ExtResource("10_wkp8b")]
+position = Vector2(0, -16)
+
+[node name="FloorTile3" parent="deco" unique_id=1103022441 instance=ExtResource("10_wkp8b")]
+position = Vector2(16, -16)
+
+[node name="FloorTile4" parent="deco" unique_id=510380352 instance=ExtResource("10_wkp8b")]
+position = Vector2(16, 0)
+
+[node name="FloorTile5" parent="deco" unique_id=700887670 instance=ExtResource("10_wkp8b")]
+position = Vector2(0, 16)
+
+[node name="FloorTile6" parent="deco" unique_id=1758409454 instance=ExtResource("10_wkp8b")]
+position = Vector2(16, 16)
+
+[node name="FloorTile8" parent="deco" unique_id=1859419142 instance=ExtResource("10_wkp8b")]
+
+[node name="FloorTile9" parent="deco" unique_id=603576929 instance=ExtResource("10_wkp8b")]
 position = Vector2(-16, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1517398990]
