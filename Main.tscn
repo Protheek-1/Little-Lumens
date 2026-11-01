@@ -276,7 +276,7 @@ metadata/_edit_use_anchors_ = true
 occluder = SubResource("OccluderPolygon2D_c84w1")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="." unique_id=495111192]
-position = Vector2(254, 262)
+position = Vector2(272, 266)
 rotation = 1.5707964
 occluder = SubResource("OccluderPolygon2D_03owx")
 
@@ -289,82 +289,82 @@ occluder = SubResource("OccluderPolygon2D_03owx")
 position = Vector2(-16, -16)
 
 [node name="FloorTile10" parent="." unique_id=379261289 instance=ExtResource("10_wkp8b")]
-position = Vector2(159, 251)
+position = Vector2(177, 255)
 
 [node name="FloorTile11" parent="." unique_id=855329922 instance=ExtResource("10_wkp8b")]
-position = Vector2(159, 268)
+position = Vector2(177, 272)
 
 [node name="FloorTile34" parent="." unique_id=930233098 instance=ExtResource("10_wkp8b")]
-position = Vector2(361, 251)
+position = Vector2(379, 255)
 
 [node name="FloorTile35" parent="." unique_id=762438558 instance=ExtResource("10_wkp8b")]
-position = Vector2(361, 268)
+position = Vector2(379, 272)
 
 [node name="FloorTile12" parent="." unique_id=355684707 instance=ExtResource("10_wkp8b")]
-position = Vector2(176, 251)
+position = Vector2(194, 255)
 
 [node name="FloorTile13" parent="." unique_id=1318947833 instance=ExtResource("10_wkp8b")]
-position = Vector2(176, 268)
+position = Vector2(194, 272)
 
 [node name="FloorTile14" parent="." unique_id=949353081 instance=ExtResource("10_wkp8b")]
-position = Vector2(193, 251)
+position = Vector2(211, 255)
 
 [node name="FloorTile15" parent="." unique_id=1246091773 instance=ExtResource("10_wkp8b")]
-position = Vector2(193, 268)
+position = Vector2(211, 272)
 
 [node name="FloorTile16" parent="." unique_id=823774045 instance=ExtResource("10_wkp8b")]
-position = Vector2(210, 251)
+position = Vector2(228, 255)
 
 [node name="FloorTile17" parent="." unique_id=1849256867 instance=ExtResource("10_wkp8b")]
-position = Vector2(210, 268)
+position = Vector2(228, 272)
 
 [node name="FloorTile18" parent="." unique_id=999068042 instance=ExtResource("10_wkp8b")]
-position = Vector2(227, 251)
+position = Vector2(245, 255)
 
 [node name="FloorTile19" parent="." unique_id=169813181 instance=ExtResource("10_wkp8b")]
-position = Vector2(227, 268)
+position = Vector2(245, 272)
 
 [node name="FloorTile20" parent="." unique_id=1092789690 instance=ExtResource("10_wkp8b")]
-position = Vector2(244, 251)
+position = Vector2(262, 255)
 
 [node name="FloorTile21" parent="." unique_id=543669727 instance=ExtResource("10_wkp8b")]
-position = Vector2(244, 268)
+position = Vector2(262, 272)
 
 [node name="FloorTile22" parent="." unique_id=939834538 instance=ExtResource("10_wkp8b")]
-position = Vector2(261, 251)
+position = Vector2(279, 255)
 
 [node name="FloorTile23" parent="." unique_id=789376393 instance=ExtResource("10_wkp8b")]
-position = Vector2(261, 268)
+position = Vector2(279, 272)
 
 [node name="FloorTile24" parent="." unique_id=312975742 instance=ExtResource("10_wkp8b")]
-position = Vector2(278, 251)
+position = Vector2(296, 255)
 
 [node name="FloorTile25" parent="." unique_id=988438928 instance=ExtResource("10_wkp8b")]
-position = Vector2(278, 268)
+position = Vector2(296, 272)
 
 [node name="FloorTile26" parent="." unique_id=879691284 instance=ExtResource("10_wkp8b")]
-position = Vector2(295, 251)
+position = Vector2(313, 255)
 
 [node name="FloorTile27" parent="." unique_id=1532054860 instance=ExtResource("10_wkp8b")]
-position = Vector2(295, 268)
+position = Vector2(313, 272)
 
 [node name="FloorTile28" parent="." unique_id=824190345 instance=ExtResource("10_wkp8b")]
-position = Vector2(312, 251)
+position = Vector2(330, 255)
 
 [node name="FloorTile29" parent="." unique_id=622549625 instance=ExtResource("10_wkp8b")]
-position = Vector2(312, 268)
+position = Vector2(330, 272)
 
 [node name="FloorTile30" parent="." unique_id=1995056552 instance=ExtResource("10_wkp8b")]
-position = Vector2(328, 251)
+position = Vector2(346, 255)
 
 [node name="FloorTile31" parent="." unique_id=1431657564 instance=ExtResource("10_wkp8b")]
-position = Vector2(328, 268)
+position = Vector2(346, 272)
 
 [node name="FloorTile32" parent="." unique_id=1346415222 instance=ExtResource("10_wkp8b")]
-position = Vector2(345, 251)
+position = Vector2(363, 255)
 
 [node name="FloorTile33" parent="." unique_id=961025657 instance=ExtResource("10_wkp8b")]
-position = Vector2(345, 268)
+position = Vector2(363, 272)
 
 [node name="FloorTile2" parent="." unique_id=1752710920 instance=ExtResource("10_wkp8b")]
 position = Vector2(0, -16)
