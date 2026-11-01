@@ -19,5 +19,4 @@ Itch: https://protheek.itch.io/little-lumens
 
 or you could download release, extract all and run exe but thats boring
 
-![Little Lumens banner/screenshot](<img width="972" height="971" alt="image" src="https://github.com/user-attachments/assets/54a7d9b4-13ab-4374-aaf9-e4bc05303ff0" />
-)
+![Little Lumens banner/screenshot](https://github.com/user-attachments/assets/54a7d9b4-13ab-4374-aaf9-e4bc05303ff0)
