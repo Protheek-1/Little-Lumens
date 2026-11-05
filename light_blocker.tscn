@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cowvc7vvdaeoj"]
+
+[ext_resource type="Texture2D" uid="uid://cdxqxinb25vty" path="res://light_blocker-Sheet.png" id="1_ach62"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t5y03"]
+blend_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_mg0v4"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.03305785, 0.5206612, 0.6280992)
+colors = PackedColorArray(1, 1, 1, 1, 0.40069774, 0.40069774, 0.40069768, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dlkih"]
+gradient = SubResource("Gradient_mg0v4")
+width = 112
+height = 112
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mg0v4"]
+blend_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_ach62"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5123967, 0.5371901)
+colors = PackedColorArray(1, 1, 1, 1, 0.45840502, 0.45840508, 0.45840502, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dcsxo"]
+gradient = SubResource("Gradient_ach62")
+width = 112
+height = 112
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg0v4"]
+atlas = ExtResource("1_ach62")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweow"]
+atlas = ExtResource("1_ach62")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6bif"]
+atlas = ExtResource("1_ach62")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph70a"]
+atlas = ExtResource("1_ach62")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giqbk"]
+atlas = ExtResource("1_ach62")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb708"]
+atlas = ExtResource("1_ach62")
+region = Rect2(100, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erwav"]
+atlas = ExtResource("1_ach62")
+region = Rect2(120, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afjwe"]
+atlas = ExtResource("1_ach62")
+region = Rect2(140, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcsxo"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg0v4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6bif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph70a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giqbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb708")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erwav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afjwe")
+}],
+"loop": 1,
+"name": &"shining",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
+radius = 42.296574
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c84w1"]
+size = Vector2(17, 17)
+
+[node name="LightBlocker" type="RigidBody2D" unique_id=872241412]
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="DitheredShadowPool" type="Sprite2D" parent="." unique_id=1586951585]
+self_modulate = Color(0.16470589, 0.16470589, 0.16470589, 0.1764706)
+material = SubResource("CanvasItemMaterial_t5y03")
+scale = Vector2(1.046875, 1)
+texture = SubResource("GradientTexture2D_dlkih")
+
+[node name="DarkShadowPool" type="Sprite2D" parent="." unique_id=2094292060]
+material = SubResource("CanvasItemMaterial_mg0v4")
+texture = SubResource("GradientTexture2D_dcsxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1431164730]
+light_mask = 2
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_dcsxo")
+animation = &"shining"
+
+[node name="DarkZone" type="Area2D" parent="." unique_id=539310286]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkZone" unique_id=859081291]
+shape = SubResource("CircleShape2D_dcsxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=775062251]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_c84w1")

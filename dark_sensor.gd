@@ -25,6 +25,13 @@ func check_initial_state() -> void:
 			open_all_doors()
 	
 func _on_area_entered(area: Area2D) -> void:
+	
+	if area.name == "DarkZone" or area.is_in_group("dark_zone"):
+		active_light_sources -= 20
+		if active_light_sources <= 0:
+			_force_activate_sensor()
+			return
+	
 	# Instantly opens the door when the player walks into the switch area
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
 		active_light_sources += 1
@@ -33,16 +40,35 @@ func _on_area_entered(area: Area2D) -> void:
 			if sprite:
 				sprite.play("lit")
 			state_changed.emit(false)
-			
 			close_all_doors()
 			
 
 func _on_area_exited(area: Area2D) -> void:
+	
+	if area.name == "DarkZone" or area.is_in_group("dark_zone"):
+		active_light_sources += 20
+		if active_light_sources >= 1:
+			is_currently_active = false
+			if sprite:
+				sprite.play("lit")
+			state_changed.emit(false)
+			close_all_doors()
+			return
+		else:
+			_force_activate_sensor()
+			return
 	# Instantly closes the door when the player walks away
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
 		active_light_sources -= 1
+		if active_light_sources <= -10:
+			return
 		if active_light_sources <= 0:
-			active_light_sources = 0
+			_force_activate_sensor()
+		
+			 
+
+func _force_activate_sensor() -> void:
+	if active_light_sources <= 0:
 			is_currently_active = true
 			if sprite:
 				sprite.play("idle")
@@ -61,7 +87,6 @@ func _on_area_exited(area: Area2D) -> void:
 					partner_is_actually_on = partner_switch.is_currently_active
 				if partner_is_actually_on:
 					open_all_doors()
-			 
 
 func open_all_doors() -> void:
 	for door in target_doors:

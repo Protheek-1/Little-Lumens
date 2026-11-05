@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://e8u0cbwviejq"]
+
+[ext_resource type="Texture2D" uid="uid://bxi7taexcap6y" path="res://lamp_post.png" id="1_py3xm"]
+
+[sub_resource type="Gradient" id="Gradient_nndpo"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5206612, 0.677686)
+colors = PackedColorArray(1, 1, 1, 1, 0.47933882, 0.47933882, 0.47933882, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dcsxo"]
+gradient = SubResource("Gradient_nndpo")
+width = 160
+height = 160
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Lamp Post" type="Sprite2D" unique_id=1519501806]
+texture = ExtResource("1_py3xm")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=104048830]
+position = Vector2(-1, 23)
+energy = 23.35
+texture = SubResource("GradientTexture2D_dcsxo")
+metadata/_edit_lock_ = true

@@ -10,10 +10,8 @@ signal state_changed(is_lit: bool)
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var active_light_sources: int = 0
+var active_dark_zones: int = 0
 
-# CHANGE THIS CONFIG TO MATCH SENSOR TYPE:
-# For a Normal Light Sensor: Set to false (starts off in the dark)
-# For a Dark Sensor: Set to true (starts active on boot-up in the dark)
 @export var is_dark_sensor: bool = false
 var is_currently_active: bool = false
 
@@ -41,6 +39,16 @@ func check_initial_state() -> void:
 			open_all_doors()
 
 func _on_area_entered(area: Area2D) -> void:
+	
+	if area.name == "DarkZone" or area.is_in_group("dark_zone"):
+		active_light_sources -= 20
+		if active_light_sources < 1 and not is_dark_sensor:
+			is_currently_active = false
+			if sprite: sprite.play("idle")
+			state_changed.emit(false)
+			close_all_doors()
+		return
+	
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
 		active_light_sources += 1
 		if active_light_sources >= 1:
@@ -61,8 +69,23 @@ func _on_area_entered(area: Area2D) -> void:
 					open_all_doors()
 
 func _on_area_exited(area: Area2D) -> void:
+	
+	if area.name == "DarkZone" or area.is_in_group("dark_zone"):
+		active_light_sources += 20
+		if active_light_sources >= 1 and not is_dark_sensor:
+			is_currently_active = true
+			if sprite: sprite.play("lit")
+			state_changed.emit(true)
+			if partner_switch == null or partner_switch.is_currently_active:
+				open_all_doors()
+		return
+	
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
 		active_light_sources -= 1
+		
+		if active_light_sources <= 10:
+			return
+		
 		if active_light_sources <= 0:
 			active_light_sources = 0
 			
