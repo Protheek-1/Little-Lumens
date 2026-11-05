@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cowvc7vvdaeoj"]
 
 [ext_resource type="Texture2D" uid="uid://cdxqxinb25vty" path="res://light_blocker-Sheet.png" id="1_ach62"]
+[ext_resource type="Script" uid="uid://bjfhu7xcca421" path="res://light_blocker.gd" id="1_mg0v4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t5y03"]
 blend_mode = 2
@@ -32,25 +33,9 @@ height = 112
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mg0v4"]
-atlas = ExtResource("1_ach62")
-region = Rect2(0, 0, 20, 20)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_sweow"]
 atlas = ExtResource("1_ach62")
 region = Rect2(20, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6bif"]
-atlas = ExtResource("1_ach62")
-region = Rect2(40, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ph70a"]
-atlas = ExtResource("1_ach62")
-region = Rect2(60, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_giqbk"]
-atlas = ExtResource("1_ach62")
-region = Rect2(80, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qb708"]
 atlas = ExtResource("1_ach62")
@@ -72,20 +57,8 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mg0v4")
-}, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_sweow")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v6bif")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ph70a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_giqbk")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qb708")
@@ -98,18 +71,20 @@ animations = [{
 }],
 "loop": 1,
 "name": &"shining",
-"speed": 4.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
 radius = 42.296574
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c84w1"]
-size = Vector2(17, 17)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweow"]
+size = Vector2(18, 18)
 
 [node name="LightBlocker" type="RigidBody2D" unique_id=872241412]
 gravity_scale = 0.0
+can_sleep = false
 lock_rotation = true
+script = ExtResource("1_mg0v4")
 
 [node name="DitheredShadowPool" type="Sprite2D" parent="." unique_id=1586951585]
 self_modulate = Color(0.16470589, 0.16470589, 0.16470589, 0.1764706)
@@ -133,5 +108,4 @@ animation = &"shining"
 shape = SubResource("CircleShape2D_dcsxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=775062251]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_c84w1")
+shape = SubResource("RectangleShape2D_sweow")

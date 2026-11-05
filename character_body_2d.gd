@@ -31,6 +31,8 @@ func _physics_process(delta):
 			place_object()
 		else:
 			for body in $PlayerGlow.get_overlapping_bodies():
+				print("Detected: ", body.name)
+				print("Has get_lifted: ", body.has_method("get_lifted"))
 				if body.has_method("get_lifted"):
 					lift_object(body)
 					break
@@ -40,7 +42,7 @@ func _physics_process(delta):
 			held_object.linear_velocity = Vector2.ZERO
 		
 		# Snappy position placement directly above your head grid row
-		held_object.global_position = global_position + Vector2(-1, -12)
+		held_object.global_position = global_position + Vector2(0, -12)
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

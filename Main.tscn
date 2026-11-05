@@ -211,6 +211,7 @@ tile_set = SubResource("TileSet_c2ibq")
 
 [node name="LightBlocker" parent="." unique_id=872241412 instance=ExtResource("4_c6i3y")]
 position = Vector2(-72, 232)
+collision_layer = 8
 
 [node name="LightSensor" parent="." unique_id=1107426434 node_paths=PackedStringArray("target_doors") instance=ExtResource("2_3dxm6")]
 position = Vector2(69, -2)

@@ -42,6 +42,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if area.name == "DarkZone" or area.is_in_group("dark_zone"):
 		active_light_sources -= 20
+		active_dark_zones += 1
 		if active_light_sources < 1 and not is_dark_sensor:
 			is_currently_active = false
 			if sprite: sprite.play("idle")
@@ -72,6 +73,7 @@ func _on_area_exited(area: Area2D) -> void:
 	
 	if area.name == "DarkZone" or area.is_in_group("dark_zone"):
 		active_light_sources += 20
+		active_dark_zones -= 1
 		if active_light_sources >= 1 and not is_dark_sensor:
 			is_currently_active = true
 			if sprite: sprite.play("lit")
@@ -83,7 +85,7 @@ func _on_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
 		active_light_sources -= 1
 		
-		if active_light_sources <= 10:
+		if active_dark_zones > 0:
 			return
 		
 		if active_light_sources <= 0:

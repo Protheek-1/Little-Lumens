@@ -222,3 +222,6 @@ animation = &"walk_up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerGlow" unique_id=1065507405]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_dcsxo")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=917965877]
+position = Vector2(0, -4)
