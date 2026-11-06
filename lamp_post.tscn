@@ -9,16 +9,27 @@ colors = PackedColorArray(1, 1, 1, 1, 0.47933882, 0.47933882, 0.47933882, 1, 0, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dcsxo"]
 gradient = SubResource("Gradient_nndpo")
-width = 160
-height = 160
+width = 144
+height = 144
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_py3xm"]
+radius = 63.198105
 
 [node name="Lamp Post" type="Sprite2D" unique_id=1519501806]
 texture = ExtResource("1_py3xm")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=104048830]
 position = Vector2(-1, 23)
-energy = 23.35
+energy = 16.0
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_dcsxo")
 metadata/_edit_lock_ = true
+
+[node name="LampGlow" type="Area2D" parent="." unique_id=671182329]
+rotation = 0.02255869
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LampGlow" unique_id=1461086256]
+position = Vector2(-0.48093978, 23.016706)
+shape = SubResource("CircleShape2D_py3xm")
