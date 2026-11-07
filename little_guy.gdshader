@@ -4,25 +4,15 @@ render_mode unshaded;
 uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
 
 void fragment() {
-	// Base game resolution
 	vec2 base_res = vec2(256.0, 256.0);
-	
-	// Set your desired chunky pixel size (2.0 makes pixels twice as big)
 	float pixel_size = 2.0;
-	
-	// Create a virtual low-res grid (128x128)
 	vec2 chunky_res = base_res / pixel_size;
-	
-	// Snap the UV precisely to our chunky grid coordinates
 	vec2 chunky_uv = floor(UV * chunky_res) / chunky_res;
-	
-	// Sample the screen using our stabilized chunky coordinates
 	vec4 raw_colour = texture(screen_texture, chunky_uv);
 	float brightness = (raw_colour.r + raw_colour.g + raw_colour.b) / 3.0;
 	
 	brightness = brightness * 3.0;
 	
-	// Calculate matrix indexes relative to the new pixel block layout
 	int x = int(chunky_uv.x * chunky_res.x) % 4;
 	int y = int(chunky_uv.y * chunky_res.y) % 4;
 	

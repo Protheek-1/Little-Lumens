@@ -21,7 +21,7 @@ func _physics_process(delta):
 		input_vector.y += 1
 	if Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_W):
 		input_vector.y -= 1
-	# Set your velocity and move smoothly through walls 
+
 	var direction = input_vector.normalized()
 	velocity = direction * SPEED
 	var pushed_block: RigidBody2D = null
@@ -37,11 +37,10 @@ func _physics_process(delta):
 					lift_object(body)
 					break
 	if held_object:
-		# Explicitly wipe out any lingering physical velocity vectors
+		
 		if "linear_velocity" in held_object:
 			held_object.linear_velocity = Vector2.ZERO
 		
-		# Snappy position placement directly above your head grid row
 		held_object.global_position = global_position + Vector2(0, -12)
 	
 	for i in get_slide_collision_count():

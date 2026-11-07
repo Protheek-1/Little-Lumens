@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dnm5wcw1fr64w"]
+
+[ext_resource type="Texture2D" uid="uid://bxyhbxiyp4tje" path="res://bug-Sheet.png" id="1_g6v7b"]
+[ext_resource type="Script" uid="uid://cbumw2g1uqihm" path="res://bug.gd" id="1_hs7dx"]
+
+[sub_resource type="Curve2D" id="Curve2D_hs7dx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 1, 0, 0, 0, 0, 22, 11, 0, 0, 0, 0, 19, 20, 0, 0, 0, 0, 13, 22, 0, 0, 0, 0, 1, 17, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3ryj"]
+atlas = ExtResource("1_g6v7b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c761e"]
+atlas = ExtResource("1_g6v7b")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcsxo"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3ryj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c761e")
+}],
+"loop": 1,
+"name": &"flying",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_q3ryj"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.04819277, 0.5481928)
+colors = PackedColorArray(1, 1, 1, 1, 0.50928617, 0.50928617, 0.50928617, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5tblr"]
+gradient = SubResource("Gradient_q3ryj")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Bug" type="Path2D" unique_id=632304701]
+curve = SubResource("Curve2D_hs7dx")
+script = ExtResource("1_hs7dx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=911192611]
+rotates = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D" unique_id=594592381]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_dcsxo")
+animation = &"flying"
+
+[node name="glow" type="PointLight2D" parent="PathFollow2D" unique_id=944394512]
+energy = 16.0
+texture = SubResource("GradientTexture2D_5tblr")
+offset = Vector2(0, 16)

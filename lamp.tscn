@@ -72,7 +72,7 @@ script = ExtResource("1_uno5e")
 sprite_frames = SubResource("SpriteFrames_dcsxo")
 animation = &"light"
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=612380020]
+[node name="glow" type="PointLight2D" parent="." unique_id=612380020]
 position = Vector2(0, 3)
 energy = 15.79
 shadow_enabled = true

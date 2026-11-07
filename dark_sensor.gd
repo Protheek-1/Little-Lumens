@@ -32,7 +32,7 @@ func _on_area_entered(area: Area2D) -> void:
 			_force_activate_sensor()
 			return
 	
-	# Instantly opens the door when the player walks into the switch area
+
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
 		active_light_sources += 1
 		if active_light_sources >= 1:
@@ -57,7 +57,7 @@ func _on_area_exited(area: Area2D) -> void:
 		else:
 			_force_activate_sensor()
 			return
-	# Instantly closes the door when the player walks away
+
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
 		active_light_sources -= 1
 		if active_light_sources <= -10:

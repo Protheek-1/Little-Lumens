@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 	
 func _physics_process(_delta: float) -> void:
-	# If the block is barely moving, force it to absolute zero
+
 	if linear_velocity.length() < 5.0:
 		linear_velocity = Vector2.ZERO
 		
