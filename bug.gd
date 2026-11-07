@@ -1,6 +1,6 @@
 extends Path2D
 
-@export var fly_speed: float = 40 
+var fly_speed: float = 0.0
 
 @onready var path_follow: PathFollow2D = $PathFollow2D
 @onready var sprite: AnimatedSprite2D = $PathFollow2D/AnimatedSprite2D
@@ -12,6 +12,11 @@ func _ready() -> void:
 		path_follow.rotates = false
 	if sprite:
 		sprite.play("flying")
+	var random_base_speed = randf_range(25.0, 45.0)
+	if randf() > 0.5:
+		fly_speed = random_base_speed
+	else:
+		fly_speed = -random_base_speed
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if path_follow:

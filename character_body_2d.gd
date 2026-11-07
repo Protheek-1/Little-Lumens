@@ -92,6 +92,17 @@ func place_object() -> void:
 	elif last_facing == "down": drop_offset = Vector2(0, 16)
 	elif last_facing == "up": drop_offset = Vector2(0, -16)
 	var drop_global_pos = global_position + drop_offset
+	
+	var query = PhysicsShapeQueryParameters2D.new()
+	query.shape_rid = held_object.get_node("CollisionShape2D").shape.get_rid()
+	query.transform = Transform2D(0, drop_global_pos)
+	query.collision_mask = 1
+	query.exclude = [get_rid(), held_object.get_rid()]
+	var space_state = get_world_2d().direct_space_state
+	var results = space_state.intersect_shape(query, 1)
+	if results.size() > 0:
+		drop_global_pos = global_position - drop_offset
+	
 	var object_to_drop = held_object
 	held_object = null
 	

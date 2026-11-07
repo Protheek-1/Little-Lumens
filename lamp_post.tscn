@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e8u0cbwviejq"]
 
 [ext_resource type="Texture2D" uid="uid://bxi7taexcap6y" path="res://lamp_post.png" id="1_py3xm"]
+[ext_resource type="Script" uid="uid://4xacf3ykfj8x" path="res://lamp_post.gd" id="2_nndpo"]
 
 [sub_resource type="Gradient" id="Gradient_nndpo"]
 interpolation_mode = 1
@@ -19,8 +20,9 @@ radius = 63.198105
 
 [node name="Lamp Post" type="Sprite2D" unique_id=1519501806]
 texture = ExtResource("1_py3xm")
+script = ExtResource("2_nndpo")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=104048830]
+[node name="glow" type="PointLight2D" parent="." unique_id=104048830]
 position = Vector2(-1, 23)
 energy = 16.0
 shadow_enabled = true
