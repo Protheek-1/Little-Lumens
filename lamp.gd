@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	var pulse_modifier = sin(pulse_time) * 0.02
 	glow.scale = Vector2(1.0 + pulse_modifier, 1.0 + pulse_modifier)
 		
-func get_lifted(player_node: Node2D) -> void:
+func get_lifted(_player_node: Node2D) -> void:
 	freeze = true
 	for child in get_children():
 		if child is CollisionShape2D:

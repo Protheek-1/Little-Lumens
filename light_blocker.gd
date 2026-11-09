@@ -16,7 +16,7 @@ func _physics_process(_delta: float) -> void:
 	if linear_velocity.length() < 5.0:
 		linear_velocity = Vector2.ZERO
 		
-func get_lifted(player_node: Node2D) -> void:
+func get_lifted(_player_node: Node2D) -> void:
 	freeze = true
 	for child in get_children():
 		if child is CollisionShape2D:

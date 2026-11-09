@@ -1,12 +1,11 @@
 extends Control
 @onready var play_prompt: Label = $PlayPrompt
-@export var main_path: String = "res://main.tscn"
+@export var main_path: String = "res://Main.tscn"
 var is_starting: bool = false
 var flash_timer: float = 0.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	grab_focus()
 	if sprite:
 		sprite.play("default")
 
