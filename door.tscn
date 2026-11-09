@@ -46,3 +46,4 @@ animation = &"open"
 
 [node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=53410380]
 stream = ExtResource("4_50cdl")
+volume_db = -2.0

@@ -70,3 +70,4 @@ animation = &"idle"
 
 [node name="ActivateSound" type="AudioStreamPlayer2D" parent="." unique_id=1346701494]
 stream = ExtResource("4_o3261")
+volume_db = -2.0

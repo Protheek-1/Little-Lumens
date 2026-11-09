@@ -70,3 +70,4 @@ animation = &"lit"
 
 [node name="ActivateSound" type="AudioStreamPlayer2D" parent="." unique_id=565582174]
 stream = ExtResource("4_p84wq")
+volume_db = -2.0
