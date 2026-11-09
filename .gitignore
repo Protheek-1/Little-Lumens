@@ -1,3 +1,22 @@
-# Godot 4+ specific ignores
+# Godot-specific ignores
 .godot/
-/android/
+.import/
+export_presets.cfg
+
+*.uid
+.mono/
+data_mono/
+mono_crash_release.json
+
+build/
+bin/
+*.apk
+*.aab
+*.exe
+*.zip
+*.tar
+*.gz
+
+# System / OS ignores
+.DS_Store
+Thumbs.db
