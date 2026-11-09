@@ -1,8 +1,12 @@
 # Little Lumens
 
-A cutie patootie 1-bit pixel art game about light, with a cozy antique / steampunk-ish vibe. Built in Godot, it’s a tiny puzzle prototype about moving, interacting, and using light to solve little environmental problems.
+![Little Lumens banner/screenshot](https://github.com/user-attachments/assets/95f079c2-77fa-4849-998f-ac32e6f134da)
+![Little Lumens banner/screenshot](https://github.com/user-attachments/assets/62481341-5a2a-4de6-b2df-954820edc7d1)
 
-What works:
+A cutie patootie 1-bit pixel art game about light, with a cozy antique / steampunk-ish vibe (you have a tophat!!!!). Built in Godot, it’s a tiny puzzle prototype about moving, interacting, and using light to solve little environmental problems.
+Made this game cause everyone is always going on about how good godot is, I had to see it for myself. I had fun making it and learning godot along the way
+
+Things to do:
 - WASD movement
 - Pick up and place objects
 - Light sensors, lamps, doors, and switches
@@ -17,6 +21,7 @@ How to play:
 Demo on itch, gotta download cause shader breaks in web version
 Itch: https://protheek.itch.io/little-lumens
 
-or you could download release, extract all and run exe but thats boring
+or you could download release, extract all and run exe but thats boring cause you don't see the itch page
 
-![Little Lumens banner/screenshot](https://github.com/user-attachments/assets/54a7d9b4-13ab-4374-aaf9-e4bc05303ff0)
+
+
