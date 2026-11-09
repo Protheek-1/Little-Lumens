@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Little Lumens"
-run/main_scene="uid://cbptj1dj5ogma"
+run/main_scene="uid://c8rknuw33w5md"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

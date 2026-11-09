@@ -1,0 +1,130 @@
+[gd_scene format=4 uid="uid://c8rknuw33w5md"]
+
+[ext_resource type="Script" uid="uid://bpwy4v14bowmv" path="res://title_screen.gd" id="1_ak2if"]
+[ext_resource type="Texture2D" uid="uid://cpikkh1pdk8v5" path="res://blob_front-Sheet.png" id="2_hafda"]
+[ext_resource type="FontFile" uid="uid://b2makxl6omhvc" path="res://ThaleahFat.ttf" id="2_ig5kc"]
+[ext_resource type="Shader" uid="uid://dyaxxkjf5abn8" path="res://little_guy.gdshader" id="3_05l2w"]
+[ext_resource type="Script" uid="uid://bujdhn5b88ldt" path="res://one_bit_filter.gd" id="4_hafda"]
+[ext_resource type="Texture2D" uid="uid://cb4hxq82wd6qp" path="res://Tilesheet.png" id="6_tpml5"]
+[ext_resource type="AudioStream" uid="uid://tp20b6s0n08x" path="res://01 - Opening.ogg" id="7_jqemp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqemp"]
+texture = ExtResource("6_tpml5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_013yr"]
+sources/0 = SubResource("TileSetAtlasSource_jqemp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpml5"]
+shader = ExtResource("3_05l2w")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpml5"]
+atlas = ExtResource("2_hafda")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqemp"]
+atlas = ExtResource("2_hafda")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_013yr"]
+atlas = ExtResource("2_hafda")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vmu4"]
+atlas = ExtResource("2_hafda")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcsxo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpml5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqemp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_013yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vmu4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="TitleScreen" type="Control" unique_id=1562883214]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ak2if")
+
+[node name="Background" type="ColorRect" parent="." unique_id=292111277]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 275.0
+color = Color(0.0071415612, 0.0071415612, 0.0071415603, 1)
+
+[node name="DecoLayer" type="TileMapLayer" parent="." unique_id=1855479974]
+z_index = 1
+position = Vector2(10, 1416)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("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AABFAA8AAAACAAAAAAA8ABEAAAACAAAAAABEAAkAAAACAAAAAAA5ABQAAAADAAAAAABDAA0AAAADAAAAAAA7AA8AAAAEAAAAAAA6AAkAAAAEAAAAAABCABQAAAAEAAAAAABCABAAAAAEAAAAAAA8AAsAAAAAAAAAAAA9AAsAAAAAAAAAAAA+AOv/AAACAAAAAABAAPL/AAADAAAAAAA+APX/AAAEAAAAAAA/AO//AAAFAAAAAABAAOn/AAABAAAAAABAAO3/AAAGAAAAAAA+AOj/AAAGAAAAAAA+APH/AAADAAAAAABAAPb/AAABAAAAAAA7ANr/AAACAAAAAAA6AN7/AAACAAAAAAA+AOT/AAACAAAAAAA7AOT/AAACAAAAAAA6AOH/AAACAAAAAAA/AOD/AAACAAAAAAA/ANr/AAACAAAAAABFANv/AAACAAAAAABCAOX/AAADAAAAAAA8AOH/AAADAAAAAABBAN3/AAADAAAAAABDAOD/AAADAAAAAABDANr/AAADAAAAAAA+AN3/AAADAAAAAABDAOP/AAAFAAAAAAA6ANz/AAAFAAAAAAA9ANn/AAAFAAAAAAA9AOX/AAAFAAAAAABEAN3/AAAFAAAAAABBAOP/AAAFAAAAAAA5AOD/AAAEAAAAAABFAOL/AAAEAAAAAABCANv/AAAEAAAAAAA8AN//AAAHAAAAAAA5ANv/AAAHAAAAAAA5AOP/AAAHAAAAAABDAN7/AAAHAAAAAABFAN//AAAHAAAAAABAAOX/AAAHAAAAAAAEAOb/AAAEAAAAAAAAAOT/AAAFAAAAAAAAAOb/AAACAAAAAAAEAOT/AAAGAAAAAAABAOP/AAAAAAAAAAACAOP/AAAAAAAAAAADAOP/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_013yr")
+collision_enabled = false
+
+[node name="OneBitFilter" type="ColorRect" parent="." unique_id=1996274509]
+z_index = 1
+material = SubResource("ShaderMaterial_tpml5")
+layout_mode = 0
+offset_left = 183.0
+offset_top = -77.0
+offset_right = 245.0
+offset_bottom = -15.0
+script = ExtResource("4_hafda")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=371222161]
+z_index = 1
+position = Vector2(132, 127.00003)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_dcsxo")
+
+[node name="PlayPrompt" type="Label" parent="." unique_id=241866485]
+z_index = 1
+layout_mode = 0
+offset_left = 82.0
+offset_top = 231.0
+offset_right = 364.0
+offset_bottom = 246.0
+theme_override_colors/font_color = Color(0.7647059, 0.58431375, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 16
+text = "space to start"
+
+[node name="GameTitle" type="Label" parent="." unique_id=207937866]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 11.0
+offset_right = 323.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 32
+text = "Little Lumens"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=972864358]
+stream = ExtResource("7_jqemp")
+autoplay = true

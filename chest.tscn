@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bxsq5sqpspf8"]
+
+[ext_resource type="Texture2D" uid="uid://dj02tav6acti1" path="res://treasure.png" id="1_twpm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcsxo"]
+size = Vector2(34, 59)
+
+[node name="Chest" type="StaticBody2D" unique_id=1662979792]
+
+[node name="Chest" type="Sprite2D" parent="." unique_id=1513839914]
+z_index = 1
+texture = ExtResource("1_twpm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481973876]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_dcsxo")

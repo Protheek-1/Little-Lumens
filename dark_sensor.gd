@@ -9,7 +9,7 @@ signal state_changed(is_lit: bool)
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var active_light_sources: int = 0
-
+var was_previously_active: bool = true
 var is_currently_active: bool = true
 
 func _ready() -> void:
@@ -41,7 +41,7 @@ func _on_area_entered(area: Area2D) -> void:
 				sprite.play("lit")
 			state_changed.emit(false)
 			close_all_doors()
-			
+			check_and_play_audio()
 
 func _on_area_exited(area: Area2D) -> void:
 	
@@ -53,6 +53,7 @@ func _on_area_exited(area: Area2D) -> void:
 				sprite.play("lit")
 			state_changed.emit(false)
 			close_all_doors()
+			check_and_play_audio()
 			return
 		else:
 			_force_activate_sensor()
@@ -87,7 +88,7 @@ func _force_activate_sensor() -> void:
 					partner_is_actually_on = partner_switch.is_currently_active
 				if partner_is_actually_on:
 					open_all_doors()
-
+			check_and_play_audio()
 func open_all_doors() -> void:
 	for door in target_doors:
 		if door and door.has_method("open"):
@@ -97,3 +98,9 @@ func close_all_doors() -> void:
 	for door in target_doors:
 		if door and door.has_method("close"):
 			door.close()
+
+func check_and_play_audio() -> void:
+	if is_currently_active and not was_previously_active:
+		if has_node("ActivateSound"):
+			$ActivateSound.play()
+	was_previously_active = is_currently_active

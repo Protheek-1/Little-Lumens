@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cesx4nxbo2oot" path="res://lamp.png" id="1_bekw5"]
 [ext_resource type="Script" uid="uid://o48r3gcpv4kt" path="res://lamp.gd" id="1_uno5e"]
+[ext_resource type="AudioStream" uid="uid://ldwluhe3mkbt" path="res://blipSelect.wav" id="3_qfipa"]
+[ext_resource type="AudioStream" uid="uid://cyqfmie3h3v11" path="res://blipDrop.wav" id="4_00ij4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uno5e"]
 atlas = ExtResource("1_bekw5")
@@ -60,7 +62,7 @@ fill_from = Vector2(0.5, 0.5)
 size = Vector2(15, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
-radius = 45.044422
+radius = 45.0
 
 [node name="Lamp" type="RigidBody2D" unique_id=200944307]
 light_mask = 2
@@ -87,3 +89,9 @@ shape = SubResource("RectangleShape2D_dlkih")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LampGlow" unique_id=1368946761]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_dcsxo")
+
+[node name="PickSound" type="AudioStreamPlayer2D" parent="." unique_id=1076046440]
+stream = ExtResource("3_qfipa")
+
+[node name="DropSound" type="AudioStreamPlayer2D" parent="." unique_id=1805218847]
+stream = ExtResource("4_00ij4")

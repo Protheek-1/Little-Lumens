@@ -10,7 +10,7 @@ signal state_changed(is_lit: bool)
 
 var active_light_sources: int = 0
 var active_dark_zones: int = 0
-
+var was_previously_active: bool = false
 @export var is_dark_sensor: bool = false
 var is_currently_active: bool = false
 
@@ -47,6 +47,7 @@ func _on_area_entered(area: Area2D) -> void:
 			if sprite: sprite.play("idle")
 			state_changed.emit(false)
 			close_all_doors()
+		check_and_play_audio()
 		return
 	
 	if area.name == "PlayerGlow" or area.is_in_group("light_source") or area.name == "LampGlow":
@@ -66,6 +67,7 @@ func _on_area_entered(area: Area2D) -> void:
 				
 				if partner_switch == null or partner_switch.is_currently_active:
 					open_all_doors()
+		check_and_play_audio()
 
 func _on_area_exited(area: Area2D) -> void:
 	
@@ -103,6 +105,7 @@ func _on_area_exited(area: Area2D) -> void:
 				if sprite: sprite.play("idle")
 				state_changed.emit(false)
 				close_all_doors()
+	check_and_play_audio()
 
 func open_all_doors() -> void:
 	for door in target_doors:
@@ -113,3 +116,9 @@ func close_all_doors() -> void:
 	for door in target_doors:
 		if door and door.has_method("close"):
 			door.close()
+
+func check_and_play_audio() -> void:
+	if is_currently_active and not was_previously_active:
+		if has_node("ActivateSound"):
+			$ActivateSound.play()
+	was_previously_active = is_currently_active

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c6rlc7plf32qf"]
+
+[ext_resource type="Shader" uid="uid://ddgc3vpvf5mne" path="res://inverter.gdshader" id="1_j7b8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7b8f"]
+size = Vector2(21, 22)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcsxo"]
+shader = ExtResource("1_j7b8f")
+
+[node name="Inverter" type="RigidBody2D" unique_id=760406803]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=824715900]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=337923535]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_j7b8f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=730961170]
+material = SubResource("ShaderMaterial_dcsxo")
+offset_left = -55.0
+offset_top = -56.0
+offset_right = 57.0
+offset_bottom = 56.0

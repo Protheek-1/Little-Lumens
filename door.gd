@@ -14,6 +14,8 @@ func open() -> void:
 		spawn_smoke()
 	if collision:
 		collision.set_deferred("disabled", true)
+	if has_node("OpenSound"):
+		$OpenSound.play()
 
 func close() -> void:
 	if sprite and sprite.animation != "closed":
@@ -21,6 +23,8 @@ func close() -> void:
 		spawn_smoke()
 	if collision:
 		collision.set_deferred("disabled", false)
+	if has_node("OpenSound"):
+		$OpenSound.play()
 func spawn_smoke() -> void:
 	var smoke = SMOKE_PUFF_SCENE.instantiate() as GPUParticles2D
 	smoke.global_position = global_position + Vector2(9, 8)

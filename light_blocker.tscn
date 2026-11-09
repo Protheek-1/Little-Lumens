@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cdxqxinb25vty" path="res://light_blocker-Sheet.png" id="1_ach62"]
 [ext_resource type="Script" uid="uid://bjfhu7xcca421" path="res://light_blocker.gd" id="1_mg0v4"]
+[ext_resource type="AudioStream" uid="uid://ldwluhe3mkbt" path="res://blipSelect.wav" id="3_v6bif"]
+[ext_resource type="AudioStream" uid="uid://cyqfmie3h3v11" path="res://blipDrop.wav" id="4_ph70a"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t5y03"]
 blend_mode = 2
@@ -75,7 +77,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
-radius = 42.296574
+radius = 40.012497
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweow"]
 size = Vector2(18, 18)
@@ -109,3 +111,9 @@ shape = SubResource("CircleShape2D_dcsxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=775062251]
 shape = SubResource("RectangleShape2D_sweow")
+
+[node name="PickSound" type="AudioStreamPlayer2D" parent="." unique_id=1334122644]
+stream = ExtResource("3_v6bif")
+
+[node name="DropSound" type="AudioStreamPlayer2D" parent="." unique_id=1601765994]
+stream = ExtResource("4_ph70a")

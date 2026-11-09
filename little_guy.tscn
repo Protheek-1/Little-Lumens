@@ -215,7 +215,7 @@ copy_mode = 2
 light_mask = 2
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_dcsxo")
-animation = &"walk_up"
+animation = &"walk_down"
 
 [node name="PlayerGlow" type="Area2D" parent="." unique_id=1751320505]
 

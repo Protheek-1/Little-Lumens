@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dpsff4qqqkonw" path="res://dark_sensor.gd" id="1_qg8rh"]
 [ext_resource type="Texture2D" uid="uid://b4gsvkis3sjpe" path="res://dark_sensor_bright-export.png" id="2_p84wq"]
 [ext_resource type="Texture2D" uid="uid://21uf456y0vtt" path="res://dark_sensor_dark-Sheet.png" id="3_fyhk8"]
+[ext_resource type="AudioStream" uid="uid://dsd0r75n1nyx3" path="res://blipActivate.wav" id="4_p84wq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
+radius = 5.0990195
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo30s"]
 atlas = ExtResource("3_fyhk8")
@@ -65,3 +67,6 @@ shape = SubResource("CircleShape2D_dcsxo")
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_uasjo")
 animation = &"lit"
+
+[node name="ActivateSound" type="AudioStreamPlayer2D" parent="." unique_id=565582174]
+stream = ExtResource("4_p84wq")

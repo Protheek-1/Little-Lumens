@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://drrutbi75wmo4" path="res://door.gd" id="1_ba8gm"]
 [ext_resource type="Texture2D" uid="uid://caai0a6ivwyr5" path="res://door_block.png" id="2_v6xrn"]
 [ext_resource type="Texture2D" uid="uid://bqbchqsg8c8kv" path="res://door_block_open.png" id="3_0phs7"]
+[ext_resource type="AudioStream" uid="uid://bq8ik444jeb0v" path="res://blipDoor.wav" id="4_50cdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcsxo"]
 size = Vector2(18, 17)
@@ -42,3 +43,6 @@ shape = SubResource("RectangleShape2D_dcsxo")
 position = Vector2(10, 12)
 sprite_frames = SubResource("SpriteFrames_dcsxo")
 animation = &"open"
+
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=53410380]
+stream = ExtResource("4_50cdl")

@@ -22,8 +22,12 @@ func get_lifted(player_node: Node2D) -> void:
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", true)
+	if has_node("PickSound"):
+		$PickSound.play()
 func get_placed() -> void:
 	freeze = false
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", false)
+	if has_node("DropSound"):
+		$DropSound.play()

@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dnqnax6ps7ad3" path="res://light_switch.gd" id="1_nw67r"]
 [ext_resource type="Texture2D" uid="uid://dx4hex35o1yni" path="res://light_sensor_dark.png" id="2_5deac"]
 [ext_resource type="Texture2D" uid="uid://ditqgyr8uiv6e" path="res://light_sensor_bright-Sheet.png" id="3_o3261"]
+[ext_resource type="AudioStream" uid="uid://dsd0r75n1nyx3" path="res://blipActivate.wav" id="4_o3261"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dcsxo"]
+radius = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v46xo"]
 atlas = ExtResource("3_o3261")
@@ -65,3 +67,6 @@ shape = SubResource("CircleShape2D_dcsxo")
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_dcsxo")
 animation = &"idle"
+
+[node name="ActivateSound" type="AudioStreamPlayer2D" parent="." unique_id=1346701494]
+stream = ExtResource("4_o3261")
