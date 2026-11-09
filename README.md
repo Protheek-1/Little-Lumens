@@ -22,6 +22,6 @@ Demo on itch, gotta download cause shader breaks in web version
 Itch: https://protheek.itch.io/little-lumens
 
 or you could download release, extract all and run exe but thats boring cause you don't see the itch page
-
+here: https://github.com/Protheek-1/Little-Lumens/releases/tag/v1.0
 
 
